@@ -1,0 +1,9 @@
+model Member {
+  id        BigInt   @id @db.UnsignedBigInt
+  email     String   @unique(map: "idx_members_email") @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  name      String   @db.VarChar(20)
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  @@map("members")
+}

@@ -1,0 +1,9 @@
+model Comment {
+  id        BigInt   @id @map("id") @db.UnsignedBigInt
+  articleId BigInt   @map("article_id") @db.UnsignedBigInt
+  userId    BigInt   @map("user_id") @db.UnsignedBigInt
+  contents  String   @map("contents") @db.MediumText
+  createdAt DateTime @default(now()) @map("created_at") @db.DateTime(0)
+
+  @@map("comments")
+}
